@@ -6,10 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Your-Project Title</title>
 
-	<!-- bower:css -->	
+	<!-- bower:css -->
+	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
 	<!-- endbower -->	
 
-	<!-- injector:css -->	
+	<!-- injector:css -->
+	<link rel="stylesheet" href="/assets/common.css">
+	<link rel="stylesheet" href="/assets/custom.css">
 	<!-- endinjector -->
 
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -29,10 +32,16 @@
 		</div>
 	</div>
 	
-	<!-- bower:js -->	
+	<!-- bower:js -->
+	<script src="bower_components/jquery/dist/jquery.js"></script>
+	<script src="bower_components/angular/angular.js"></script>
+	<script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+	<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
 	<!-- endbower -->
 
 	<!-- injector:js -->
+	<script src="/scripts/app.js"></script>
+	<script src="/scripts/routes.js"></script>
 	<!-- endinjector -->
 </body>
 </html>
