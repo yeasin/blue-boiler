@@ -1,0 +1,23 @@
+{
+  "name": "zing-travel",
+  "version": "1.0.0",
+  "authors": [
+    "Md. Yeasin Hossain"
+  ],
+  "description": "Travel site of zingbees",
+  "main": "index.html",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.4",
+    "angular": "~1.4.0",
+    "angular-ui-router": "~0.2.15",
+    "bootstrap": "~3.3.4"
+  }
+}
