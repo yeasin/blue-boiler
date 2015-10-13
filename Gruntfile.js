@@ -10,8 +10,32 @@ module.exports = function(grunt) {
     //  Includes all the js files inside scripts folder to index.html automatically
     'injector': {
       dev_injector: {
+        options: {
+          // addRootSlash: true,
+          relative: true
+        },
         files: {
-          'index.html': ['bower.json', 'scripts/**/*.js', 'assets/**/*.css'],
+          'index.html': [     
+            //  Styles
+            'assets/css/bootstrap.css',
+            'bower_components/ngDialog/css/ngDialog-theme-plain.css',
+            'assets/css/style.css',
+            'assets/css/style-responsive.css',
+            'assets/css/font-awesome.css',
+            'assets/css/flexslider.css',
+            'assets/common.css',
+            'assets/custom.css',
+            'scripts/**/*.css',
+
+            //  bower components       
+            'bower.json',
+
+            //  shim vendors
+            'assets/shim/**/*.js',
+
+            //  Application components
+            'scripts/**/*.js',            
+          ]
         }
       },
       prod_injector: {
@@ -85,15 +109,16 @@ module.exports = function(grunt) {
           base: './',
           port: 8000,
           hostname: '0.0.0.0',
-          open: true,
-          livereload: true,
-          middleware: function (connect) {
-            return [
-              require('connect-livereload')(),
-              connect.static('./'),    
-              connect.directory('./')
-            ];
-          }
+          keepalive: true
+          // open: true,
+          // livereload: true,
+          // middleware: function (connect) {
+          //   return [
+          //     require('connect-livereload')(),
+          //     connect.static('./'),    
+          //     connect.directory('./')
+          //   ];
+          // }
         }
       }
     },
@@ -117,7 +142,8 @@ module.exports = function(grunt) {
   */
 
   // Default task
-  grunt.registerTask('default', ['injector:dev_injector', 'connect', 'watch']);
+  // grunt.registerTask('default', ['injector:dev_injector', 'connect', 'watch']);
+  grunt.registerTask('default', ['injector:dev_injector', 'connect']);
 
   // Deploy application
   grunt.registerTask('deploy', ['clean', 'bower_concat', 'uglify', 'copy', 'injector:prod_injector']);
